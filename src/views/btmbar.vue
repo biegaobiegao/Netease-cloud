@@ -22,15 +22,17 @@
         </div>
         <div class="play">
           <div class="words">
-            <router-link to="/" v-if="JSON.stringify(curSongInfo) === '{}'" ></router-link>
-            <router-link to="/" v-else class="name f-s-12 u-line">{{curSongInfo.name}}</router-link>
-            <span class="by">
-              <span>
-                <router-link to="/" v-if="JSON.stringify(curSongInfo) === '{}'" ></router-link>
-                <router-link to="/" v-else class="f-s-12 u-line">{{curSongInfo.ar[0].name}}</router-link>
+            <div v-if="JSON.stringify(curSongInfo) !== '{}'">
+              <!-- <router-link to="/" v-if="JSON.stringify(curSongInfo) === '{}'" ></router-link> -->
+              <router-link to="/" class="name f-s-12 u-line">{{curSongInfo.name}}</router-link>
+              <span class="by">
+                <span>
+                  <!-- <router-link to="/" v-if="JSON.stringify(curSongInfo) === '{}'" ></router-link> -->
+                  <router-link to="/" class="f-s-12 u-line">{{curSongInfo.ar[0].name}}</router-link>
+                </span>
               </span>
-            </span>
-            <router-link to="/" class="src" title="来自歌单"></router-link>
+              <router-link to="/" class="src" title="来自歌单"></router-link>
+            </div>
           </div>
           <div class="m-pbar">
             <div class="barbg">
